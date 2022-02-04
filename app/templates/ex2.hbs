@@ -1,0 +1,13 @@
+{{page-title "Ex2"}}
+{{outlet}}
+<ul class="list-group">
+  {{#each @model.products as |product|}}
+    <li class="list-group-item {{if product.active "active"}}" {{action "toggleActive" product}}>
+      {{product.name}}-{{product.price}}-{{product.active}}
+    </li>
+  {{/each}}
+
+  <h2>{{plural @model.countActive "Aucun" "1 service" "services"}}</h2>
+  <h2>{{@model.sumActive}}</h2>
+  <Input @value={{@model.codePromo}}/>
+</ul>
