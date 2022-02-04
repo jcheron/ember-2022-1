@@ -1,0 +1,13 @@
+{{page-title "Ex1"}}
+<div class="card">
+  <div class="card-header">
+    Note application
+  </div>
+  <div class="card-body">
+    <Textarea maxlength="{{this.MAX}}" {{on "keyup" this.update}} class="form-control" @value={{this.content}}/>
+    <h1>{{this.size}}</h1>
+    <div class="alert alert-{{this.style}}">{{this.info}}</div>
+    <div {{action "save" this.content}} class="btn btn-primary">Enregistrer</div>
+  </div>
+</div>
+{{outlet}}

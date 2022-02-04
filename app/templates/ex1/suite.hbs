@@ -1,0 +1,8 @@
+{{page-title "Suite"}}
+{{outlet}}
+<h1>Items</h1>
+<ul>
+  {{#each @model.items as |item|}}
+    <li>{{item}}</li>
+  {{/each}}
+</ul>
