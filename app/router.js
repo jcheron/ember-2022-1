@@ -9,4 +9,6 @@ export default class Router extends EmberRouter {
 Router.map(function () {
   this.route('multi');
   this.route('step1');
+  this.route('ex');
+  this.route('stepx');
 });

@@ -1,0 +1,21 @@
+{{page-title "Step1"}}
+<MultiSelect class="form-control"
+             @elements={{this.dispoItems}}
+             @selected={{this.sInit}}
+             @onChange={{this.changeDispo}}/>
+<button class="btn btn-primary" type="button" {{action "add" this.dispoItems this.includedItems this.dispoItems_}}>
+  >
+</button>
+<button class="btn btn-primary" type="button" {{action "add" this.dispoItems this.includedItems this.dispoItems}}>
+  >>
+</button>
+<button class="btn btn-primary" type="button" {{action "remove" this.includedItems this.dispoItems this.includedItems_}}>
+  </button>
+<button class="btn btn-primary" type="button" {{action "remove" this.includedItems this.dispoItems this.includedItems}}>
+  </button>
+<MultiSelect class="form-control"
+             @elements={{this.includedItems}}
+             @selected={{this.sInit}}
+             @onChange={{this.changeIncluded}}/>
+
+{{outlet}}

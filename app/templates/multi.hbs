@@ -1,0 +1,11 @@
+{{page-title "Multi"}}
+<MultiSelect @elements={{@model.elms}}
+             @selected={{@model.selected}}/>
+<div>
+  <ul>
+    {{#each @model.selected as |item|}}
+      <li>{{item.title}}</li>
+    {{/each}}
+  </ul>
+</div>
+{{outlet}}

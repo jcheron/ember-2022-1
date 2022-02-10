@@ -1,0 +1,23 @@
+{{page-title "Stepx"}}
+<MultiSelect class="form-control" @elements={{this.dispoItems}}
+             @selected={{this.dispoItems_}}
+             @onChange={{this.changeDispo}}
+/>
+<button disabled="{{if this.dispoItems_ '' 'disabled'}}" {{action "add" this.dispoItems this.includedItems
+                                                                  this.dispoItems_ }}
+        class="btn btn-primary">
+  <i class="bi bi-chevron-bar-right"></i>
+</button>
+<div {{action "remove" this.includedItems this.dispoItems this.includedItems_ }} class="btn btn-primary">
+  <
+</div>
+
+<MultiSelect class="form-control" @elements={{this.includedItems}}
+             @selected={{this.includedItems_}}
+             @onChange={{this.changeIncluded}}
+/>
+<ul>
+  {{#each this.dispoItems_ as |item|}}
+    <li>{{item.title}}</li>
+  {{/each}}
+</ul>
