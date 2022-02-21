@@ -1,0 +1,27 @@
+{{page-title "Contacts"}}
+<table class="table">
+  <tbody>
+  {{#each @model.contacts as |contact|}}
+    <tr>
+      <td>{{contact.nom}}</td>
+      <td>
+        <button class="btn btn-danger btn-sm" type="button" {{action "delete" contact}}>
+          <i class="bi bi-x"></i>
+        </button>
+      </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+<Input @value={{this.name}}/>
+<LinkTo class="btn btn-primary" @route="contacts.add">Ajouter un contact</LinkTo>
+
+{{#if @model.deletedsCount}}
+  <button class="btn btn-danger" type="button" {{action "confirmDeletion" @model.deleteds}}>
+    Supprimer définitivement ({{@model.deletedsCount}})
+  </button>
+  <button class="btn btn-secondary" type="button" {{action "cancelDeletion" @model.deleteds}}>
+    Annuler la suppression ({{@model.deletedsCount}})
+  </button>
+{{/if}}
+{{outlet}}
