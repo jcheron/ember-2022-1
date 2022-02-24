@@ -1,20 +1,3 @@
 {{page-title "Add"}}
-<div class="card">
-  <div class="card-body">
-    <div class="row align-items-start">
-      <div class="col">
-        <Input required class="form-control" @value={{@model.nom}} placeholder="Nom" />
-      </div>
-      <div class="col">
-        <Input class="form-control" @value={{@model.prenom}} placeholder="Prénom" />
-      </div>
-      <div class="col">
-        <Input type="email" class="form-control" @value={{@model.email}} placeholder="Email" />
-      </div>
-      <div class="col">
-        <button {{action "save" @model}} class="btn btn-success">Valider</button>
-      </div>
-    </div>
-  </div>
-</div>
+<FormContact @contact={{@model}} @save={{this.save}}/>
 {{outlet}}
