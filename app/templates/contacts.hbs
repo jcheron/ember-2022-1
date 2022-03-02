@@ -5,6 +5,9 @@
     <tr>
       <td>{{contact.nom}}</td>
       <td>
+        <LinkTo class="btn btn-primary btn-sm" @route="contacts.update" @model={{contact}}>
+          <i class="bi bi-x"></i>
+        </LinkTo>
         <button class="btn btn-danger btn-sm" type="button" {{action "delete" contact}}>
           <i class="bi bi-x"></i>
         </button>
