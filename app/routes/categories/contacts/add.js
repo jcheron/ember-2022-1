@@ -5,7 +5,8 @@ export default class CategoriesContactsAddRoute extends Route {
     console.log(params.category_id);
   }
 
-  setupController(controller, model) {
+  setupController(controller) {
+    let model = this.modelFor('categories.contacts');
     controller.set('category', model);
   }
 }
