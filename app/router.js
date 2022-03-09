@@ -12,4 +12,10 @@ Router.map(function () {
     this.route('add');
     this.route('update', { path: 'update/:contact_id' });
   });
+  this.route('categories', function () {
+    this.route('add');
+    this.route('contacts', { path: 'contacts/:category_id' }, function () {
+      this.route('add');
+    });
+  });
 });

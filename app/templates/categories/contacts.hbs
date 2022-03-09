@@ -1,0 +1,10 @@
+{{page-title "Contacts"}}
+<LinkTo @route="categories.contacts.add" @model={{@model}} class="btn btn-link">
+  Ajouter un contact
+</LinkTo>
+<ul>
+  {{#each @model.contacts as |contact|}}
+    <li>{{contact.nom}} - {{contact.email}}</li>
+  {{/each}}
+</ul>
+{{outlet}}

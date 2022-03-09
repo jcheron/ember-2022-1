@@ -1,0 +1,8 @@
+{{page-title "Add"}}
+<Input class="form-control"
+       @value={{@model.nom}}/>
+<div {{action "save" @model}}
+  class="btn btn-outline-dark">
+  Enregistrer
+</div>
+{{outlet}}
