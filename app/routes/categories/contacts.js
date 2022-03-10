@@ -5,8 +5,13 @@ export default class CategoriesContactsRoute extends Route {
   @service store;
 
   model(params) {
-    return this.store.findRecord('category', params.category_id, {
-      include: 'contacts',
+    return this.store.findRecord('category', params.category_id);
+  }
+
+  async afterModel(model) {
+    let contacts = await this.store.query('contact', {
+      filter: { category: model.id },
     });
+    model.set('contacts', contacts);
   }
 }
